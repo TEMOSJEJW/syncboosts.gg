@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BoostSync Activity</title>
+  <style>
+    body {
+      background-color: #0b0c10;
+      color: #c5c6c7;
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    button {
+      background: linear-gradient(90deg, #1f2833, #45a29e);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      border-radius: 12px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background: #444;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 BoostSync</h1>
+  <p>Synchronize your cosmic boost energy...</p>
+  <button id="boostBtn">SYNC BOOST</button>
+
+  <script>
+    const btn = document.getElementById('boostBtn');
+    btn.addEventListener('click', () => {
+      btn.disabled = true;
+      btn.innerText = "Synced!";
+      // Send a signal back to your bot or API here:
+      fetch("https://your-api-url.com/boostcomplete", { method: "POST" });
+    });
+  </script>
+</body>
+</html>
